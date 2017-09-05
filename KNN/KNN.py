@@ -80,7 +80,7 @@ def auto_norm(data_set):
 def dating_class_test():
     # 使用10%的数据作为测试数据
     ho_ratio = 0.1
-    dating_data_mat, dating_labels = file2matrix('./datingTestSet.txt')
+    dating_data_mat, dating_labels = file2matrix('./KNN/datingTestSet.txt')
     norm_mat, ranges, min_vals = auto_norm(dating_data_mat)
     m = norm_mat.shape[0]
     num_test_vecs = int(m * ho_ratio)
@@ -95,6 +95,6 @@ def dating_class_test():
 
 
 if __name__ == '__main__':
-    datingDataMat, datingLabels = file2matrix('./datingTestSet.txt')
+    datingDataMat, datingLabels = file2matrix('./KNN/datingTestSet.txt')
     normMat, _, _ = auto_norm(datingDataMat)
     print classify(datingDataMat[12, :], normMat[0:11, :], datingLabels[0:11], 3)
